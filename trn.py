@@ -51,7 +51,9 @@ run the newly trained model on the test data.
 import os,time
 os.environ['TF_CPP_MIN_LOG_LEVEL']='2'
 import numpy as np
-import tensorflow as tf
+import tensorflow.compat.v1 as tf
+tf.disable_v2_behavior()
+print("TF version:", tf.__version__)
 from datetime import datetime
 from tqdm import tqdm
 import supportingFunctions as sf
