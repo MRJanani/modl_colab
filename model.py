@@ -7,7 +7,9 @@ Paper dwonload  Link:     https://arxiv.org/abs/1712.02862
 
 @author: haggarwal
 """
-import tensorflow as tf
+import tensorflow.compat.v1 as tf
+tf.disable_v2_behavior()
+print("TF version:", tf.__version__)
 import numpy as np
 from os.path import expanduser
 home = expanduser("~")
