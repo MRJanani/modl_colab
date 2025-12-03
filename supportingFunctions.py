@@ -104,7 +104,7 @@ def getData(trnTst='testing',num=100,sigma=.01):
 #Here I am reading one single image from  demoImage.hdf5 for testing demo code
 def getTestingData():
     print('Reading the data. Please wait...')
-    filename='demoImage.hdf5' #set the correct path here
+    filename='/content/modl/demoImage.hdf5' #set the correct path here
     tic()
     with h5.File(filename,'r') as f:
         org,csm,mask=f['tstOrg'][:],f['tstCsm'][:],f['tstMask'][:]
