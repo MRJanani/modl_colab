@@ -18,13 +18,18 @@ print("TF version:", tf.__version__)
 import matplotlib.pyplot as plt
 import supportingFunctions as sf
 
-cwd=os.getcwd()
+cwd = os.getcwd()
 tf.reset_default_graph()
 
 #%% choose a model from savedModels directory
 
 #subDirectory='14Mar_1105pm'
 subDirectory='04Jun_0356pm_5L_10K_50E_AG'
+
+modelDir= find_folder("subDirectory") #complete path of  model from savedModels directory
+
+
+
 #%%Read the testing data from dataset.hdf5 file
 
 #tstOrg is the original ground truth
@@ -40,7 +45,6 @@ tstOrg,tstAtb,tstCsm,tstMask=sf.getTestingData()
 #%% Load existing model. Then do the reconstruction
 print ('Now loading the model ...')
 
-modelDir= cwd+'/savedModels/'+subDirectory #complete path
 rec=np.empty(tstAtb.shape,dtype=np.complex64) #rec variable will have output
 
 tf.reset_default_graph()
